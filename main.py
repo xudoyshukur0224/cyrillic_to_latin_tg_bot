@@ -1,6 +1,12 @@
 import telebot
+import os
+from dotenv import load_dotenv
 from transliterate import to_cyrillic, to_latin
-TOKEN = "8821716042:AAHhthkepFu_eeJAcvkASeIigtbeHoxST6c" 
+
+load_dotenv()
+
+
+TOKEN = os.getenv("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN, parse_mode=None)
 
 @bot.message_handler(commands=['start', 'help'])
